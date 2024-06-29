@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import myContext from "../../context/data/myContext";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../../Services/AxiosInterception.js";
 import toast from "react-hot-toast";
 
 function NotesCard() {
@@ -15,14 +15,11 @@ function NotesCard() {
   }, []);
   const deleteNotes = async (id) => {
     try {
-      const res = await axios.delete(
-        `https://e-notes-8cl5.onrender.com/api/notes/deletenotes/${id}`,
-        {
-          headers: {
-            "auth-token": localStorage.getItem("token"),
-          },
-        }
-      );
+      const res = await axios.delete(`/api/notes/deletenotes/${id}`, {
+        headers: {
+          "auth-token": localStorage.getItem("token"),
+        },
+      });
       setAllNotes((prev) => prev.filter((item) => item._id !== id));
       toast.success(res.data.message, { position: "top-right" });
     } catch (error) {

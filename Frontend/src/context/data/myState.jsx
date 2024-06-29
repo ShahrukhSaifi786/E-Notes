@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MyContext from "./myContext";
-import axios from "axios";
+import axios from "../../Services/AxiosInterception.js";
 
 function MyState(props) {
   // const [loading, setLoading] = useState(false);
@@ -10,7 +10,7 @@ function MyState(props) {
     // setLoading(true);
     try {
       const res = await axios.get(
-        "https://e-notes-8cl5.onrender.com/api/notes/fetchallnotes",
+        "/api/notes/fetchallnotes",
         {
           headers: {
             "auth-token": localStorage.getItem("token"),

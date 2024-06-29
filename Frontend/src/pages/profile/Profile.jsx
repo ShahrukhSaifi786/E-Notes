@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout";
-import axios from "axios";
+import axios from "../../Services/AxiosInterception.js";
 import myContext from "../../context/data/myContext";
 
 function Profile() {
@@ -8,7 +8,7 @@ function Profile() {
   const context = useContext(myContext);
   const getUser = async () => {
     try {
-      const res = await axios.get("https://e-notes-8cl5.onrender.com/api/auth/getuser", {
+      const res = await axios.get("/api/auth/getuser", {
         headers: {
           "auth-token": localStorage.getItem("token"),
         },

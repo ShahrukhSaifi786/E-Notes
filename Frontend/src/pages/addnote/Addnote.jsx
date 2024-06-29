@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../../components/layout/Layout";
 import toast from "react-hot-toast";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import axios from "../../Services/AxiosInterception.js";
 
 function Addnote() {
   const user = {
@@ -15,14 +15,18 @@ function Addnote() {
   const handleAddNote = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://e-notes-8cl5.onrender.com/api/notes/addnotes", addNote, {
-        headers: {
-          "auth-token": localStorage.getItem("token"),
-        },
-      });
+      const res = await axios.post(
+        "/api/notes/addnotes",
+        addNote,
+        {
+          headers: {
+            "auth-token": localStorage.getItem("token"),
+          },
+        }
+      );
       if (res.status === 200) {
         toast.success(res.data.message, { position: "top-right" });
-        navigate("/")
+        navigate("/");
       }
     } catch (error) {
       // console.log(error)

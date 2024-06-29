@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../../Services/AxiosInterception.js";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -14,7 +14,7 @@ function Login() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://e-notes-8cl5.onrender.com/api/auth/login",
+        "/api/auth/login",
         loginUser
       );
       if (res.status === 200) {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import axios from "../../Services/AxiosInterception.js";
 import toast from "react-hot-toast";
 
 function Updatenote() {
@@ -16,7 +16,7 @@ function Updatenote() {
   const fetchedOneNotes = async () => {
     try {
       const res = await axios.get(
-        `https://e-notes-8cl5.onrender.com/api/notes/notes/${id}`,
+        `/api/notes/notes/${id}`,
         {
           headers: {
             "auth-token": localStorage.getItem("token"),
@@ -38,7 +38,7 @@ function Updatenote() {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `https://e-notes-8cl5.onrender.com/api/notes/updatenotes/${id}`,
+        `/api/notes/updatenotes/${id}`,
         updateNotes,
         {
           headers: {
