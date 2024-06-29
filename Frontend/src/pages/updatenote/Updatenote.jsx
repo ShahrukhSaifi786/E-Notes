@@ -16,7 +16,7 @@ function Updatenote() {
   const fetchedOneNotes = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:400/api/notes/notes/${id}`,
+        `https://e-notes-8cl5.onrender.com/api/notes/notes/${id}`,
         {
           headers: {
             "auth-token": localStorage.getItem("token"),
@@ -38,7 +38,7 @@ function Updatenote() {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:400/api/notes/updatenotes/${id}`,
+        `https://e-notes-8cl5.onrender.com/api/notes/updatenotes/${id}`,
         updateNotes,
         {
           headers: {

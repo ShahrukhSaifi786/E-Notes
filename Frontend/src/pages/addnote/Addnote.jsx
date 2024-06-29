@@ -15,7 +15,7 @@ function Addnote() {
   const handleAddNote = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:400/api/notes/addnotes", addNote, {
+      const res = await axios.post("https://e-notes-8cl5.onrender.com/api/notes/addnotes", addNote, {
         headers: {
           "auth-token": localStorage.getItem("token"),
         },

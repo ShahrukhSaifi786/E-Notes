@@ -14,7 +14,7 @@ function Signup() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:400/api/auth/signup",
+        "https://e-notes-8cl5.onrender.com/api/auth/signup",
         signUpUser
       );
       if (res.status === 201) {

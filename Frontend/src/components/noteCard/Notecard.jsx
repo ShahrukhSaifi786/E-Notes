@@ -16,7 +16,7 @@ function NotesCard() {
   const deleteNotes = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:400/api/notes/deletenotes/${id}`,
+        `https://e-notes-8cl5.onrender.com/api/notes/deletenotes/${id}`,
         {
           headers: {
             "auth-token": localStorage.getItem("token"),

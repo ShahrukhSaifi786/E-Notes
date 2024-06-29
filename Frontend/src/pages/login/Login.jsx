@@ -14,7 +14,7 @@ function Login() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:400/api/auth/login",
+        "https://e-notes-8cl5.onrender.com/api/auth/login",
         loginUser
       );
       if (res.status === 200) {

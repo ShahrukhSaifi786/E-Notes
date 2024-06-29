@@ -10,7 +10,7 @@ function MyState(props) {
     // setLoading(true);
     try {
       const res = await axios.get(
-        "http://localhost:400/api/notes/fetchallnotes",
+        "https://e-notes-8cl5.onrender.com/api/notes/fetchallnotes",
         {
           headers: {
             "auth-token": localStorage.getItem("token"),

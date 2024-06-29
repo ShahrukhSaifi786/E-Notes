@@ -8,7 +8,7 @@ function Profile() {
   const context = useContext(myContext);
   const getUser = async () => {
     try {
-      const res = await axios.get("http://localhost:400/api/auth/getuser", {
+      const res = await axios.get("https://e-notes-8cl5.onrender.com/api/auth/getuser", {
         headers: {
           "auth-token": localStorage.getItem("token"),
         },
