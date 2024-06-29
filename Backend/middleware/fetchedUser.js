@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
-import "dotenv/config.js";
-
+import dotenv from "dotenv";
+dotenv.config();
 export const fetchedUser = async (req, res, next) => {
   const token = req.header("auth-token");
   if (!token) {
