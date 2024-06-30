@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:400/",
+  baseURL: https://e-notes-api.vercel.app/",
   timeout: 2000,
 });
 
